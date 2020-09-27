@@ -16,6 +16,15 @@ ext {
     set('springCloudVersion', "Hoxton.SR8")
 }
 
+bootJar {
+    mainClassName = 'com.codebenders.mementoapigateway.MementoApiGatewayApplication'
+    manifest {
+        attributes 'Implementation-Title': project.name,
+                'Implementation-Version': project.version
+    }
+    archiveFileName = 'memento-api-gateway.jar'
+}
+
 dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
